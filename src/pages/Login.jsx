@@ -8,7 +8,7 @@ function Login({ onAuth, setMessage }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        const api = import.meta.env.VITE_API_URL;
         const res = await fetch(`${api}/api/auth/login`, {
             method: 'POST',
             credentials: 'include',
