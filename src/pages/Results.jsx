@@ -19,7 +19,7 @@ export default function Results() {
         fetch(`${api}/flights?from=${from}&to=${to}`)
             .then((res) => res.json())
             .then((data) => {
-                setFlights(data.data); //use .data only if paginated
+                setFlights(data.data || data); //use .data only if paginated
                 setIsLoading(false);
             });
     }, [from, to]);
